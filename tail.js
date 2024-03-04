@@ -15,12 +15,13 @@ console.log(tail([5]));
 // TEST CODE
 const testArr1 = [5, 6, 7, 'a', 10],
   testArr2 = [null, null, null, null],
-  testArr3 = [];
-testArr1.forEach((e, i, arr) => i > 0 && assertEqual(e, tail(arr)[i - 1]));
-testArr2.forEach((e, i, arr) => i > 0 && assertEqual(e, tail(arr)[i - 1]));
-testArr3.forEach((e, i, arr) => i > 0 && assertEqual(e, tail(arr)[i - 1]));
-// ensure original array is not modified
-tail(testArr1);
-assertEqual(testArr1.length, 5);
-testArr1.forEach((e, i, arr) => assertEqual(e, arr[i]));
-testArr1.forEach((e, i, arr) => assertEqual(e, tail(arr)[i - 1]));
+  testArr3 = [],
+  result1 = tail(testArr1),
+  result2 = tail(testArr2),
+  result3 = tail(testArr3);
+
+assertEqual(tail([5]).length, 0);
+testArr1.forEach((e, i) => i > 0 && assertEqual(e, result1[i - 1]));
+testArr2.forEach((e, i) => i > 0 && assertEqual(e, result2[i - 1]));
+testArr3.forEach((e, i) => i > 0 && assertEqual(e, result3[i - 1]));
+assertEqual(result1.length, testArr1.length - 1);
