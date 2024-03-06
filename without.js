@@ -14,13 +14,28 @@ const assertArraysEqual = function (arr1, arr2) {
 
 // filter out the items of the source array that
 // cannot be found in the itemsToRemove array
-const without = (source, itemsToRemove) =>
-  source.filter(
-    (srcEl) => itemsToRemove.findIndex((toRmEl) => toRmEl === srcEl) === -1
-    // findIndex looks for first item in the array that
-    // equals the item currently being looked at in the
-    // source array and returns -1 if it is not found
-  )
+// const without = (source, itemsToRemove) =>
+//   source.filter(
+//     (srcEl) => itemsToRemove.findIndex((toRmEl) => toRmEl === srcEl) === -1
+// findIndex looks for first item in the array that
+// equals the item currently being looked at in the
+// source array and returns -1 if it is not found
+// )
+
+const without = (source, itemsToRemove) => {
+  const newArr = []
+  for (let item of source) {
+    let itemFound = false
+    for (let element of itemsToRemove) {
+      if (element === item) {
+        itemFound = true
+        break
+      }
+    }
+    if (!itemFound) newArr.push(item)
+  }
+  return newArr
+}
 
 //TEST CODE
 assertArraysEqual(without([1, 2, 3], [1]), [2, 3])
