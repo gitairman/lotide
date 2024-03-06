@@ -10,7 +10,7 @@ const assertEqual = function (actual, expected) {
 const countLetters = (str) => {
   const letterCount = {}
   for (let char of str)
-    if (char !== ' ') letterCount = (letterCount[char] || 0) + 1
+    if (char !== ' ') letterCount[char] = (letterCount[char] || 0) + 1
   return letterCount
 }
 
