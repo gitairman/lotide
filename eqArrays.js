@@ -1,26 +1,50 @@
-const eqArrays = (arr1, arr2) =>
-  Array.isArray(arr1) && Array.isArray(arr2) && arr1.length === arr2.length
-    ? arr1.every((e, i) => e === arr2[i])
-    : false
+const eqArrays = (arr1, arr2) => {
+  // helper function to check that both inputs are arrays and of same length
+  const checkArrAndLength = (e1, e2) => {
+    const areArrays = Array.isArray(e1) && Array.isArray(e2);
+    const areSameLength = e1.length === e2.length;
+    return areArrays && areSameLength;
+  };
 
-const assertEqual = function (actual, expected) {
-  const result = actual === expected
-  result && console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  !result && console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
-}
+  // if arr1 and arr2 are both arrays and same length, return the
+  // result of checking every element in the arrays for equality
+  if (checkArrAndLength(arr1, arr2)) {
+    return arr1.every((arr1El, i) => {
+      const arr2El = arr2[i];
+      // if an element of the array is yet another array, recursive case
+      if (checkArrAndLength(arr1El, arr2El)) return eqArrays(arr1El, arr2El);
+      return arr1El === arr2El;
+    });
+  }
+  return false;
+};
+
+const assertEqual = function(actual, expected) {
+  const result = actual === expected;
+  result && console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  !result && console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+};
 
 // TEST CODE
-console.log(eqArrays([1, 2, 3], [1, 2, 3]))
-console.log(eqArrays([1, 2, 3], [3, 2, 1]))
-console.log(eqArrays(['1', '2', '3'], ['1', '2', '3']))
-console.log(eqArrays(['1', '2', '3'], ['1', '2', 3]))
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)
-assertEqual(eqArrays([1, 2, 3], [1, '2', 3]), false)
-assertEqual(eqArrays([], [1, '2', 3]), false)
-assertEqual(eqArrays([], []), true)
-assertEqual(eqArrays([1], [1, 2]), false)
-assertEqual(eqArrays([], [1]), false)
-assertEqual(eqArrays(1, []), false)
-assertEqual(eqArrays([], 1), false)
-assertEqual(eqArrays(1, 1), false)
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays([1, 2, 3], [1, '2', 3]), false);
+assertEqual(eqArrays([], [1, '2', 3]), false);
+assertEqual(eqArrays([], []), true);
+assertEqual(eqArrays([1], [1, 2]), false);
+assertEqual(eqArrays([], [1]), false);
+assertEqual(eqArrays(1, []), false);
+assertEqual(eqArrays([], 1), false);
+assertEqual(eqArrays(1, 1), false);
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
+assertEqual(
+  eqArrays(
+    [5, [2, 3], [8, [9, 10, [15, 20, 30]]], [4]],
+    [5, [2, 3], [8, [9, 10, [15, 20, 30]]], [4]]
+  ),
+  true
+);
+
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
+assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
