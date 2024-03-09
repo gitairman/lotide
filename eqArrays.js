@@ -1,15 +1,12 @@
 const eqArrays = (arr1, arr2) =>
-  arr1.length === arr2.length && Array.isArray(arr1)
+  Array.isArray(arr1) && Array.isArray(arr2) && arr1.length === arr2.length
     ? arr1.every((e, i) => e === arr2[i])
     : false
 
 const assertEqual = function (actual, expected) {
   const result = actual === expected
-  console.log(
-    `${result ? '✅✅✅' : '🛑🛑🛑'} Assertion ${
-      result ? 'Passed' : 'Failed'
-    }: ${actual} ${result ? '===' : '!=='} ${expected}`
-  )
+  result && console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
+  !result && console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
 }
 
 // TEST CODE

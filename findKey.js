@@ -1,17 +1,14 @@
-const assertEqual = function (actual, expected) {
-  const result = actual === expected
-  console.log(
-    `${result ? '✅✅✅' : '🛑🛑🛑'} Assertion ${
-      result ? 'Passed' : 'Failed'
-    }: ${actual} ${result ? '===' : '!=='} ${expected}`
-  )
-}
+const assertEqual = function(actual, expected) {
+  const result = actual === expected;
+  result && console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  !result && console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+};
 
 const findKey = (obj, cb) => {
   for (const [key, val] of Object.entries(obj)) {
-    if (cb(val)) return key
+    if (cb(val)) return key;
   }
-}
+};
 
 findKey(
   {
@@ -23,7 +20,7 @@ findKey(
     Akelarre: { stars: 3 },
   },
   (x) => x.stars === 2
-)
+);
 // => "noma"
 
 // TEST CODE
@@ -40,7 +37,7 @@ assertEqual(
     (x) => x.stars === 2
   ),
   'noma'
-)
+);
 assertEqual(
   findKey(
     {
@@ -54,7 +51,7 @@ assertEqual(
     (x) => x.stars === 3
   ),
   'Akaleri'
-)
+);
 assertEqual(
   findKey(
     {
@@ -68,7 +65,7 @@ assertEqual(
     (x) => x.stars === 1
   ),
   'Blue Hill'
-)
+);
 assertEqual(
   findKey(
     {
@@ -82,4 +79,4 @@ assertEqual(
     (x) => x.stars === 4
   ),
   undefined
-)
+);
