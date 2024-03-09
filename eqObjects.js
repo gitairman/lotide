@@ -25,7 +25,7 @@ const eqObjects = (obj1, obj2) => {
     }
 
     // if an object property value is an object...
-    if (typeof obj1Val === 'object' && typeof obj2Val === 'object') {
+    if (typeof obj1Val === 'object' && typeof obj2Val === 'object' && obj1Val !== null && obj2Val !== null) {
       if (!eqObjects(obj1Val, obj2Val)) return false;
       continue;
     }
