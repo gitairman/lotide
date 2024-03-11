@@ -34,7 +34,7 @@ const without = (source, itemsToRemove, newArr = []) => {
   // to the items in the itemsToRemove
   const findItems = (src, iTr) => {
     if (iTr.length === 0) return newArr.push(src[0]);
-    if (src[0] !== iTr[0]) return findMatch(src, iTr.slice(1));
+    if (src[0] !== iTr[0]) return findItems(src, iTr.slice(1));
   };
 
   findItems(source, itemsToRemove);
