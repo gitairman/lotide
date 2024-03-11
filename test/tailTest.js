@@ -1,5 +1,6 @@
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
+
+const assert = require('chai').assert;
 
 // TEST CODE
 const testArr1 = [5, 6, 7, 'a', 10],
@@ -9,8 +10,17 @@ const testArr1 = [5, 6, 7, 'a', 10],
   result2 = tail(testArr2),
   result3 = tail(testArr3);
 
-assertEqual(tail([5]).length, 0);
-testArr1.forEach((e, i) => i > 0 && assertEqual(e, result1[i - 1]));
-testArr2.forEach((e, i) => i > 0 && assertEqual(e, result2[i - 1]));
-testArr3.forEach((e, i) => i > 0 && assertEqual(e, result3[i - 1]));
-assertEqual(result1.length, testArr1.length - 1);
+describe('#tail', () => {
+  it('returns an array with a length of 2 for [1, 2, 3]', () => {
+    assert.strictEqual(tail([1, 2, 3]).length, 2);
+  });
+  it("returns [6, 7, 'a', 10] for [5, 6, 7, 'a', 10]", () => {
+    assert.deepEqual(result1, [6, 7, 'a', 10]);
+  });
+  it('returns [null, null, null] for [null, null, null, null]', () => {
+    assert.deepEqual(result2, [null, null, null]);
+  });
+  it('returns [] for []', () => {
+    assert.deepEqual(result3, []);
+  });
+});
