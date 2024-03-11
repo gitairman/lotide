@@ -15,3 +15,5 @@ assertEqual(result1['h'], 2);
 assertEqual(result1['e'], 3);
 assertEqual(result1[' '], undefined);
 assertEqual(result1['o'], 1);
+
+module.exports = countLetters;

@@ -20,3 +20,5 @@ assertArraysEqual(
   flatten([1, 2, [3, 4, [8, 9, [[], 11, [1]]]], 5, [6]]),
   [1, 2, 3, 4, 8, 9, 11, 1, 5, 6]
 );
+
+module.exports = flatten;

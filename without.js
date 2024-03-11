@@ -26,21 +26,21 @@ const assertArraysEqual = require('./assertArraysEqual');
 // }
 
 // recursive solution
-// const without = (source, itemsToRemove, newArr = []) => {
+const without = (source, itemsToRemove, newArr = []) => {
 
-//   if (source.length === 0) return newArr;
+  if (source.length === 0) return newArr;
 
-//   // helper function to compare each element in the source array
-//   // to the items in the itemsToRemove
-//   const findItems = (src, iTr) => {
-//     if (iTr.length === 0) return newArr.push(src[0]);
-//     if (src[0] !== iTr[0]) return findMatch(src, iTr.slice(1));
-//   };
+  // helper function to compare each element in the source array
+  // to the items in the itemsToRemove
+  const findItems = (src, iTr) => {
+    if (iTr.length === 0) return newArr.push(src[0]);
+    if (src[0] !== iTr[0]) return findMatch(src, iTr.slice(1));
+  };
 
-//   findItems(source, itemsToRemove);
+  findItems(source, itemsToRemove);
 
-//   return without(source.slice(1), itemsToRemove, newArr);
-// };
+  return without(source.slice(1), itemsToRemove, newArr);
+};
 
 // one-liner using built-in method
 // const without = (source, itemsToRemove) => source.filter((el) => !itemsToRemove.includes(el))
@@ -56,3 +56,5 @@ assertArraysEqual(without([4, 'a', '2', 'c', 5], [1, 2, '3', 'a', 6, 5]), [
 const words = ['hello', 'world', 'lighthouse'];
 without(words, ['lighthouse']);
 assertArraysEqual(words, ['hello', 'world', 'lighthouse']);
+
+module.exports = without;

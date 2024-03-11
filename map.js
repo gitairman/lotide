@@ -28,3 +28,5 @@ assertArraysEqual(
   map(words, (word) => (word === 'tom' ? 'fred' : word)),
   ['ground', 'control', 'to', 'major', 'fred']
 );
+
+module.exports = map;

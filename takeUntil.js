@@ -29,3 +29,5 @@ assertArraysEqual(
   takeUntil(data1, (data) => data > 7),
   [1, 2, 5, 7, 2, -1, 2, 4, 5]
 );
+
+module.exports = takeUntil;

@@ -76,3 +76,6 @@ assertEqual(
   ),
   undefined
 );
+
+
+module.exports = findKey;

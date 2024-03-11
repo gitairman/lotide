@@ -13,3 +13,5 @@ const letterPositions = (str) => {
 
 assertArraysEqual(letterPositions('hello').e, [1]);
 assertArraysEqual(letterPositions('hello there neighbour').n, [12]);
+
+module.exports = assertArraysEqual;
