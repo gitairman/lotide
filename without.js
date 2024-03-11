@@ -1,5 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
 // filter out the items of the source array that
 // cannot be found in the itemsToRemove array
 // const without = (source, itemsToRemove) =>

@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual');
 const eqArrays = require('./eqArrays');
 
 // eqObjects takes in two objects and returns true or false, based on a perfect match.
