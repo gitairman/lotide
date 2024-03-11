@@ -1,4 +1,4 @@
-// return the middle elements of an array
+// return the middle element(s) of an array
 const middle = (arr) => {
   // if array has 2 elements or less, there is no middle so return empty array
   if (arr.length <= 2) return [];
