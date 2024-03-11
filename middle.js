@@ -1,5 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
-
 // return the middle elements of an array
 const middle = (arr) => {
   // if array has 2 elements or less, there is no middle so return empty array
@@ -10,7 +8,4 @@ const middle = (arr) => {
   return arr.slice(midStartIdx, midEndIdx);
 };
 
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle([1]), []);
-assertArraysEqual(middle([1, 2]), []);
+module.exports = middle;
