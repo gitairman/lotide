@@ -1,4 +1,4 @@
-const assertEqual = require('./assertEqual')
+const assertEqual = require('./assertEqual');
 
 const eqArrays = (arr1, arr2) => {
   // helper function to check that both inputs are arrays and of same length
@@ -44,4 +44,4 @@ const eqArrays = (arr1, arr2) => {
 // assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
 // assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
 
-module.exports = eqArrays
+module.exports = eqArrays;

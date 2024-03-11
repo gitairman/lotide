@@ -46,13 +46,13 @@ const assertArraysEqual = require('./assertArraysEqual');
 // const without = (source, itemsToRemove) => source.filter((el) => !itemsToRemove.includes(el))
 
 //TEST CODE
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3])
+assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
 assertArraysEqual(without(['1', '2', '3'], [1, 2, '3']), ['1', '2']);
 assertArraysEqual(without([4, 'a', '2', 'c', 5], [1, 2, '3', 'a', 6, 5]), [
   4,
   '2',
   'c',
-])
-const words = ['hello', 'world', 'lighthouse']
-without(words, ['lighthouse'])
-assertArraysEqual(words, ['hello', 'world', 'lighthouse'])
+]);
+const words = ['hello', 'world', 'lighthouse'];
+without(words, ['lighthouse']);
+assertArraysEqual(words, ['hello', 'world', 'lighthouse']);
