@@ -1,16 +1,16 @@
 {
-  "name": "lotide",
+  "name": "@aaronhopkins",
   "version": "1.0.0",
   "description": "## Library which aims to implement helper functions similar to Lodash",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Aaron Hopkins",
   "license": "ISC",
   "devDependencies": {
     "chai": "^4.3.1",

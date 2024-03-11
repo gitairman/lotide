@@ -1,5 +1,6 @@
 const assertArraysEqual = require('./assertArraysEqual');
 
+// takes in a string and returns an object with the characters as keys and an array of indexes where they are found as values
 const letterPositions = (str) => {
   const results = {};
 

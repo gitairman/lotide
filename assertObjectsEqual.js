@@ -1,10 +1,17 @@
 const eqObjects = require('./eqObjects');
 
+// takes in two objects and outputs a message if they are equal or not
 const assertObjectsEqual = (actual, expected) => {
   const inspect = require('util').inspect;
   const result = eqObjects(actual, expected);
-  result && console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
-  !result && console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  result &&
+    console.log(
+      `✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`
+    );
+  !result &&
+    console.log(
+      `🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`
+    );
 };
 
 // assertObjectsEqual(

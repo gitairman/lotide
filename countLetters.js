@@ -1,5 +1,6 @@
 const assertEqual = require('./assertEqual');
 
+// takes in a string and outputs the amount letters excluding space
 const countLetters = (str) => {
   const letterCount = {};
   for (const char of str) {
