@@ -26,7 +26,7 @@ const eqObjects = (obj1, obj2) => {
       if (eqObjects(obj1Val, obj2Val)) continue;
       return false;
     }
-    // lastly, if the property values
+    // if the object property values are just values...
     if (obj1Val !== obj2Val) return false;
   }
   return true;
