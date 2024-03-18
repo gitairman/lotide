@@ -1,4 +1,5 @@
-// takes in an array and a callback, and returns a new array containing the values for which the result of calling the callback on each element of the original array is true.
+// takes in an array and a callback, and returns a new array containing the values
+// for which the result of calling the callback on each element of the original array is true.
 const takeUntil = (array, callback) => {
   const results = [];
 

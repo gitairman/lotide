@@ -1,4 +1,4 @@
-// eqArrays takes in two arrays and determines if they are equal
+// eqArrays takes in two arrays and true if they are equal and false if they are not
 // nested arrays are also handled with recursion
 const eqArrays = (arr1, arr2) => {
   // helper function to check that both inputs are arrays and of same length

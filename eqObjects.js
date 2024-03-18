@@ -17,7 +17,7 @@ const eqObjects = (obj1, obj2) => {
       return false;
     }
 
-    // if an object property values are objects...
+    // if an object property values are objects, recursive call
     const areObjects =
       typeof obj1Val === 'object' && typeof obj2Val === 'object';
     const areNotNull = obj1Val !== null && obj2Val !== null;
