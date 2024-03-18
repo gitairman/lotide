@@ -1,6 +1,6 @@
 {
   "name": "@aaronhopkins/lotide",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "## Library which aims to implement helper functions similar to Lodash",
   "main": "index.js",
   "directories": {
